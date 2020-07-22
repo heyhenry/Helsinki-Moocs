@@ -45,8 +45,7 @@ public class Repeating_Breaking_and_Remembering {
 
         }
 
-
-
+        sc.close();
 
     }
 
