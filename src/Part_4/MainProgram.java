@@ -29,16 +29,42 @@ public class MainProgram {
 //        counter.decrement();
 //        counter.printValue();
 
-        // Resetting counter value
-        Decreasing_Counter counter = new Decreasing_Counter(100);
+//        // Resetting counter value
+//        Decreasing_Counter counter = new Decreasing_Counter(100);
+//
+//        counter.printValue();
+//
+//        counter.reset();
+//        counter.printValue();
+//
+//        counter.decrement();
+//        counter.printValue();
 
-        counter.printValue();
+        Payment_Card paul = new Payment_Card(20);
+        Payment_Card matt = new Payment_Card(30);
 
-        counter.reset();
-        counter.printValue();
+        paul.eatHeartily();
 
-        counter.decrement();
-        counter.printValue();
+        matt.eatAffordably();
+
+        System.out.println("Paul: " + paul);
+        System.out.println("Matt: " + matt);
+
+        paul.addMoney(20);
+
+        matt.eatHeartily();
+
+        System.out.println("Paul: " + paul);
+        System.out.println("Matt: " + matt);
+
+        paul.eatAffordably();
+        paul.eatAffordably();
+
+        matt.addMoney(50);
+
+        System.out.println("Paul: " + paul);
+        System.out.println("Matt: " + matt);
+
 
     }
 
