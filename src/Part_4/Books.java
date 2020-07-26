@@ -33,7 +33,7 @@ public class Books {
 
         while(true) {
 
-            System.out.println("Title: s");
+            System.out.println("Title: ");
             String title = sc.nextLine();
 
             if(title.isEmpty()) {
