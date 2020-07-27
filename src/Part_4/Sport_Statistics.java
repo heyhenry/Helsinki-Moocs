@@ -27,77 +27,37 @@ public class Sport_Statistics {
 
                 String[] pieces = lines.split(",");
 
-                if(pieces[0].contains(teamName) || pieces[1].contains(teamName)) {
+                if(pieces[0].contains(teamName)) {
 
                     counter++;
 
-                }
-
-                if(pieces[0].contains(teamName)) {
-
-                    if(Integer.valueOf(pieces[2]) < Integer.valueOf(pieces[3])) {
-
-                        System.out.println("First IF");
-                        lossCounter++;
-
-                    }
-
-                } else if(pieces[1].contains(teamName)) {
-
-                    if(Integer.valueOf(pieces[3]) < Integer.valueOf(pieces[2])) {
-
-                        System.out.println("Second IF");
-                        lossCounter++;
-
-                    }
-
-                } else {
-
-                    System.out.println("Third IF");
-                    continue;
-
-                }
-
-                if(pieces[1].contains(teamName)) {
-
-                    if(Integer.valueOf(2) < Integer.valueOf(pieces[3])) {
+                    if(Integer.valueOf(pieces[2]) > Integer.valueOf(pieces[3])) {
 
                         winCounter++;
 
                     } else {
 
-                        continue;
+                        lossCounter++;
 
                     }
 
                 }
 
+                if(pieces[1].contains(teamName)) {
 
+                    counter++;
 
-//                if(pieces[0].contains(teamName)) {
-//
-//                    if(Integer.valueOf(pieces[2]) < Integer.valueOf(pieces[3])) {
-//
-//                        System.out.println("L: " + lossCounter);
-//                        lossCounter++;
-//
-//                    }
-//
-//                }
-//
-//                if(pieces[1].contains(teamName)) {
-//
-//                    if(Integer.valueOf(pieces[3]) < Integer.valueOf(pieces[2])) {
-//
-//                        System.out.println("L: " + lossCounter);
-//                        lossCounter++;
-//
-//                    } else {
-//
-//                        System.out.println("W: " + winCounter);
-//                        winCounter++;
-//
-//                    }
+                    if(Integer.valueOf(pieces[3]) > Integer.valueOf(pieces[2])) {
+
+                        winCounter++;
+
+                    } else {
+
+                        lossCounter++;
+
+                    }
+
+                }
 
             }
 
