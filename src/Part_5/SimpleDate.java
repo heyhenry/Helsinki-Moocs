@@ -23,6 +23,26 @@ public class SimpleDate {
         return this.year;
     }
 
+    public boolean before(SimpleDate compared) {
+        // first compare years
+        if (this.year < compared.year) {
+            return true;
+        }
+
+        // if the years are the same, compare months
+        if (this.year == compared.year && this.month < compared.month) {
+            return true;
+        }
+
+        // the years and the months are the same, compare days
+        if (this.year == compared.year && this.month == compared.month &&
+                this.day < compared.day) {
+            return true;
+        }
+
+        return false;
+    }
+
     public boolean equals(Object compared) {
         // if the variables are located in the same position, they are equal
         if (this == compared) {
@@ -49,9 +69,67 @@ public class SimpleDate {
         return false;
     }
 
-    @Override
     public String toString() {
         return this.day + "." + this.month + "." + this.year;
+    }
+
+    public void advance() {
+
+        this.day = this.day + 1;
+
+        if(this.day == 30) {
+
+            this.month = this.month + 1;
+            this.day = 0;
+
+            if(this.month == 12) {
+
+                this.year = this.year + 1;
+                this.month = 0;
+
+            }
+
+        }
+
+    }
+
+    public void advance(int howManyDays) {
+
+        for(int i = 1; i <= howManyDays; i++) {
+
+            advance();
+
+        }
+
+    }
+
+    public SimpleDate afterNumberOfDays(int days) {
+
+        SimpleDate newDate = new SimpleDate(this.day, this.month, this.year);
+
+        newDate.advance(days);
+
+
+        return newDate;
+
+    }
+
+    public static void main(String[] args) {
+        SimpleDate date = new SimpleDate(13, 2, 2015);
+        System.out.println("Friday of the examined week is " + date);
+
+        SimpleDate newDate = date.afterNumberOfDays(7);
+        int week = 1;
+        while (week <= 7) {
+            System.out.println("Friday after " + week + " weeks is " + newDate);
+            newDate = newDate.afterNumberOfDays(7);
+
+            week = week + 1;
+        }
+
+
+        System.out.println("The date after 790 days from the examined Friday is ... try it out yourself!");
+        //    System.out.println("Try " + date.afterNumberOfDays(790));
     }
 
 }
