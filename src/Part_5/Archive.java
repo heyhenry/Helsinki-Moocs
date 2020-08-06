@@ -15,6 +15,34 @@ public class Archive {
 
     }
 
+//    // to compare if both id and name matched
+//    public boolean equals(Object compared) {
+//
+//        if(this == compared) {
+//
+//            return true;
+//
+//        }
+//
+//        if(!(compared instanceof Archive)) {
+//
+//            return false;
+//
+//        }
+//
+//        Archive comparedArchive = (Archive) compared;
+//
+//        if(this.id.equals(comparedArchive.id) && this.name.equals(comparedArchive.name)) {
+//
+//            return true;
+//
+//        }
+//
+//        return false;
+//
+//    }
+
+    // to only compare if if id is correct
     public boolean equals(Object compared) {
 
         if(this == compared) {
@@ -31,7 +59,7 @@ public class Archive {
 
         Archive comparedArchive = (Archive) compared;
 
-        if(this.id.equals(comparedArchive.id) && this.name.equals(comparedArchive.name)) {
+        if(this.id.equals(comparedArchive.id)) {
 
             return true;
 
@@ -77,11 +105,12 @@ public class Archive {
 
             if(a.contains(an)) {
 
-                break;
+                continue;
 
             }
 
             a.add(an);
+
 
         }
 
