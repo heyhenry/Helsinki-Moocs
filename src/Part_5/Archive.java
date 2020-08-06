@@ -114,6 +114,7 @@ public class Archive {
 
         }
 
+        System.out.println("==Items==");
         for(Archive aa : a)  {
 
             System.out.println(aa);
