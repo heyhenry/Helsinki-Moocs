@@ -33,6 +33,33 @@ public class SimpleCollection {
 
     }
 
+    public String longest() {
+
+        String omg = col.get(0);
+        String currentString = omg;
+
+        for(int i = 1; i < col.size(); i++) {
+
+            String newStrings = col.get(i);
+
+            if(omg.length() > newStrings.length()) {
+
+                omg = newStrings;
+
+            }
+
+        }
+
+        if(col.size() == 0 || col.size() == 1) {
+
+            return "Longest: null";
+
+        }
+
+        return "Longest: " + omg;
+
+    }
+
     public String toString() {
 
         int arraySize = col.size();
@@ -57,23 +84,32 @@ public class SimpleCollection {
 
     public static void main(String[] args) {
 
-        SimpleCollection s = new SimpleCollection("alphabet");
-        System.out.println(s);
+//        SimpleCollection s = new SimpleCollection("alphabet");
+//        System.out.println(s);
+//
+//        System.out.println();
+//
+//        s.add("a");
+//        System.out.println(s);
+//
+//        System.out.println();
+//
+//        s.add("b");
+//        System.out.println(s);
+//
+//        System.out.println();
+//
+//        s.add("c");
+//        System.out.println(s);
 
-        System.out.println();
+        SimpleCollection j = new SimpleCollection("characters");
+        System.out.println("Longest: " + j.longest());
 
-        s.add("a");
-        System.out.println(s);
+        j.add("magneto");
+        j.add("mystique");
+        j.add("phoenix");
 
-        System.out.println();
-
-        s.add("b");
-        System.out.println(s);
-
-        System.out.println();
-
-        s.add("c");
-        System.out.println(s);
+        System.out.println("Longest: " + j.longest());
 
     }
 
