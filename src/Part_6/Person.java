@@ -12,6 +12,18 @@ public class Person {
 
     }
 
+    public String getName() {
+
+        return name;
+
+    }
+
+    public int getHeight() {
+
+        return height;
+
+    }
+
     public String toString() {
 
         return name + "(" + height + " cm)";

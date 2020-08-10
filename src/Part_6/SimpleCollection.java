@@ -3,6 +3,8 @@ package Part_6;
 import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class SimpleCollection {
 
@@ -19,44 +21,6 @@ public class SimpleCollection {
     public void add(String addToArray) {
 
         col.add(addToArray);
-
-    }
-
-    public String okc() {
-
-        for(String op : col) {
-
-
-        }
-
-        return "";
-
-    }
-
-    public String longest() {
-
-        String omg = col.get(0);
-        String currentString = omg;
-
-        for(int i = 1; i < col.size(); i++) {
-
-            String newStrings = col.get(i);
-
-            if(omg.length() > newStrings.length()) {
-
-                omg = newStrings;
-
-            }
-
-        }
-
-        if(col.size() == 0 || col.size() == 1) {
-
-            return "Longest: null";
-
-        }
-
-        return "Longest: " + omg;
 
     }
 
@@ -79,6 +43,32 @@ public class SimpleCollection {
             }
 
         return output;
+
+    }
+
+    public String longest() {
+
+        if(col.isEmpty()) {
+
+            return null;
+
+        }
+
+        String longOne = col.get(0);
+
+        for(int i = 0; i < col.size(); i++) {
+
+            String indexo = col.get(i);
+
+            if(longOne.length() < indexo.length()) {
+
+                longOne = indexo;
+
+            }
+
+        }
+
+        return longOne;
 
     }
 
