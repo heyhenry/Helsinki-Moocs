@@ -26,7 +26,7 @@ public class Person {
 
     public String toString() {
 
-        return name + "(" + height + " cm)";
+        return name + " (" + height + " cm)";
 
     }
 
